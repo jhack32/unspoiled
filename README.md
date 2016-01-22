@@ -1,3 +1,5 @@
+![Unspoiled logo](https://github.com/jhack32/unspoiled/blob/master/big.png)
+
 == Keep your browser Unspoiled...
 
 Circle CI Tests: [![Circle CI](https://circleci.com/gh/nyc-copperheads-2016/unspoiled/tree/master.svg?style=svg)](https://circleci.com/gh/nyc-copperheads-2016/unspoiled/tree/master)
