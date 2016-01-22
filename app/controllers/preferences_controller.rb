@@ -4,12 +4,7 @@ class PreferencesController < ApplicationController
 
   def create
     @mediaobj = Media.find_by(id: params[:preference][:media_id])
-    if !@mediaobj
-      category = Category.find_by(category_type: "Custom")
-      @mediaobj = Media.create!(title: params[:preference][:word], category: category)
-    end
-    @category = Category.find_by(id: @mediaobj.category_id )
-    @categories = Category.all
+    @category = @mediaobj.category
     @preference = Preference.new(user: current_user, media: @mediaobj)
     if @preference.save
       if @mediaobj.category.category_type == "Movies"
@@ -21,21 +16,14 @@ class PreferencesController < ApplicationController
       end
       render json: {message:@mediaobj.title}
     else
-      render json: {message:'Failed to save'}, status: 422
+      render json: {message: @preference.errors.full_messages.join(' ')}, status: 422
     end
   end
 
   def update
     preference = Preference.find(params[:id])
-    if preference.active == true
-      preference.update_attribute(:active, !true)
-
-      render json: {userId: preference.user_id, preferenceId: preference.id, active: false}
-      # redirect_to user_path(current_user.id)
-    else
-      preference.update_attribute(:active, true)
-      render json: {userId: preference.user_id, preferenceId: preference.id, active: true}
-    end
+    preference.update_attribute(:active, !preference.active)
+    render json: {userId: preference.user_id, preferenceId: preference.id, active: preference.active}
   end
 
   def destroy
