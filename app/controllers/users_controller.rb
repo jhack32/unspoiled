@@ -25,11 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    if request.xhr?
-      render '/users/show', layout: false
-    else
-      render '/users/show'
-    end
+    render '/users/show', layout: !request.xhr?
   end
 
   def update
@@ -56,9 +52,9 @@ class UsersController < ApplicationController
     render :json => filters
   end
 
-  def active_words(array)
+  def active_words(preferences)
     list_of_words = []
-    array.each do |preference|
+    preferences.each do |preference|
       preference.words.each do |word|
         list_of_words << word.word
       end
