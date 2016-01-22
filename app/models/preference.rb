@@ -7,14 +7,6 @@ class Preference < ActiveRecord::Base
   validates :media_id, :uniqueness => {:scope => :user}
 
 
-  def on_or_off
-    if active == true
-      "on"
-    else
-      "off"
-    end
-  end
-
   def self.create_movie_words(preference, media_title)
     tmdb_id = TmdbMovie.find_first_match_id("movie", media_title)
       characters = TmdbMovie.find_characters("movie", tmdb_id, media_title)
