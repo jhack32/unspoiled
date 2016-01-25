@@ -12,11 +12,10 @@ class MediaController < ApplicationController
   end
 
   def new
-    Media.new
   end
 
   def create
-    new_media = Media.new(title: params[:media][:title], category: Category.find_by(category_type: 'Custom Filters'))
+    new_media = Media.new(title: params[:media][:title], category: Category.find_by(category_type: 'Custom'))
     if new_media.save
       redirect_to "/media/#{new_media.id}/words"
     else
