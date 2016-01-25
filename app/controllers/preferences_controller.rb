@@ -4,16 +4,9 @@ class PreferencesController < ApplicationController
 
   def create
     @mediaobj = Media.find_by(id: params[:preference][:media_id])
-    @category = @mediaobj.category
     @preference = Preference.new(user: current_user, media: @mediaobj)
     if @preference.save
-      if @mediaobj.category.category_type == "Movies"
-        Preference.create_movie_words(@preference, @mediaobj.title)
-      elsif @mediaobj.category.category_type == "Custom"
-        Preference.words.create(word: params[:preference][:word])
-      else
-        Preference.create_tv_words(@preference, @mediaobj.title)
-      end
+      Preference.create_media_words(@preference, @mediaobj)
       render json: {message:@mediaobj.title}
     else
       render json: {message: @preference.errors.full_messages.join(' ')}, status: 422
