@@ -45,22 +45,13 @@ class UsersController < ApplicationController
   def filtered_words
     if current_user
       pref = Preference.where(active: true).where('preferences.user_id = ?',current_user.id )
-      filters = active_words(pref)
+      filters = User.active_words(pref)
     else
       filters = []
     end
     render :json => filters
   end
 
-  def active_words(preferences)
-    list_of_words = []
-    preferences.each do |preference|
-      preference.words.each do |word|
-        list_of_words << word.word
-      end
-    end
-    list_of_words
-  end
 
 
   private
