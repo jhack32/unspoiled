@@ -8,9 +8,9 @@
 
 
 arc = User.create!(email:'arc@example.com', username:'arcangelo', password:'password', active:true)
-movies = Category.create!(category_type: "Movies")
-tv = Category.create!(category_type: "T.V. Shows")
-custom = Category.create!(category_type: "Custom Filters")
+movies = Category.create!(category_type: "Movie")
+tv = Category.create!(category_type: "TV")
+custom = Category.create!(category_type: "Custom")
 
 #tv shows
 Media.create!(title: "Marvel's Daredevil",category_id: tv.id )
