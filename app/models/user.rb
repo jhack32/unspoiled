@@ -11,4 +11,14 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :email, :format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
 
+
+  def self.active_words(preferences)
+    list_of_words = []
+    preferences.each do |preference|
+      preference.words.each do |word|
+        list_of_words << word.word
+      end
+    end
+    list_of_words
+  end
 end
