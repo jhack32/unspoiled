@@ -13,7 +13,7 @@ Unspoiled is a Google Chrome extension that blocks all narrative outcome referen
 Version 2.2.3
 
 ## Technical Details
-Unspoiled is built using Ruby On Rails, jQuery, Sass, Bootstrap. It is deployed on [Heroku](http://www.keepunspoiled.herokuapp.com). Unspoiled uses data from [The Movie Database](http://www.tmdb.org).
+Unspoiled is built using Ruby On Rails, jQuery, Sass, Bootstrap. It is deployed on [Heroku](http://keepunspoiled.herokuapp.com/). Unspoiled uses data from [The Movie Database](http://www.tmdb.org).
 
 ## Download Unspoiled
 We're on Google Chrome Webstore!
