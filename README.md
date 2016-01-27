@@ -7,7 +7,7 @@ Circle CI Tests: [![Circle CI](https://circleci.com/gh/nyc-copperheads-2016/unsp
 Unspoiled is a Google Chrome extension that blocks all narrative outcome references to movies, tv shows, and sports games.
 
 ## Developed by
-[Ryan Lesson](http://www.github.com/bigless27), [Arcangelo Petretta](http://www.github.com/arcpetretta), [Jack Huang](http://www.github.com/jackhuang7), and [Eliza Dunaway](http://www.github.com/elizaway)
+[Ryan Lesson](http://www.github.com/bigless27), [Arcangelo Petretta](http://www.github.com/arcpetretta), [Jack Huang](http://www.github.com/jhack32), and [Eliza Dunaway](http://www.github.com/elizaway)
 
 ## Ruby version
 Version 2.2.3
