@@ -1,7 +1,7 @@
 <div id='login-form'>
-  <%= form_tag login_path do %>
-    Username: <%= text_field_tag :username %>
-    Password: <%= password_field_tag :password %>
-    <%= submit_tag 'Login' %>
+  <%= form_tag login_path, class: "form-signin" do %>
+    <%= text_field_tag :username, nil, class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
+    <%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Password', required: true, autofocus: true  %>
+    <%= submit_tag 'Login', class: 'btn btn-lg btn-primary btn-block' %>
   <% end %>
 </div>
