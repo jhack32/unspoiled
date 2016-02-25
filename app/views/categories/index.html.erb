@@ -26,7 +26,5 @@
 </div>
 
 <div class="btn-group-md">
-  <button type="button" class="btn btn-primary">
-    <%= link_to 'Add Custom Filter', new_category_media_path(@categories.last.id) %>
-  </button>
+    <%= link_to 'Add Custom Filter', new_category_media_path(@categories.last.id), class: "btn btn-primary" %>
 </div>

@@ -45,13 +45,9 @@
 
     <div class="btn-group-md">
 
-      <button type="button" class="btn btn-primary">
-        <%= link_to "Login", new_session_path  %>
-      </button>
+        <%= link_to "Login", new_session_path , class: "btn btn-primary" %>
 
-      <button type="button" class="btn btn-primary">
-        <%= link_to "Create Account", new_user_path %>
-      </button>
+        <%= link_to "Create Account", new_user_path, class: "btn btn-primary" %>
 
     </div>
     <% end %>
